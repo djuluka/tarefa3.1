@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="static/css/headers.css" />
 
     <link rel="stylesheet" href="static/css/reset.min.css" />
+    <link rel="stylesheet" href="static/css/responsive.css" />
     <link
       href="https://www.cssscript.com/demo/sticky.css"
       rel="stylesheet"
@@ -29,6 +30,8 @@
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     />
 
+    <link rel="stylesheet" href="static/css/responsive.css" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -40,24 +43,47 @@
   </head>
   <body>
     <!-- Header Start -->
-    <header class="site-header">
-      <div class="wrapper site-header__wrapper">
-        <div class="site-header__start">
-          <nav class="nav"></nav>
-          <a href="#" class="brand">Animalec</a>
-        </div>
-        <div class="site-header__end">
-          <ul class="sub-nav">
-            <li class=""><a href="#">Aminais</a></li>
-            <li class=""><a class="active" href="#">Sponsors</a></li>
-            <li class=""><a href="#">Experts</a></li>
-            <li class=""><a href="#">Quizzes</a></li>
-            <li class=""><a href="#">Contactos</a></li>
-            <li class=""><a href="#">Login</a></li>
+    <header class="header">
+      <div class="container brand">
+        <nav class="navbar">
+          <a href="#" class="nav-logo"
+            ><img
+              src="static/img/animalec.ico"
+              alt="Girl in a jacket"
+              width="30"
+              height="30"
+            />
+            ANIMALEC</a
+          >
+          <ul class="nav-menu div1">
+            <li class="nav-item">
+              <a href="#" class="nav-link">ANIMAIS</a>
+            </li>
+            <li class="nav-item">
+              <a href="sponsor.html" class="nav-link">SPSONSOR</a>
+            </li>
+            <li class="nav-item">
+              <a href="experts.html" class="nav-link">EXPERTS</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">QUIZZES</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">CONTACTOS</a>
+            </li>
+            <li class="nav-item">
+              <a href="login.html" class="nav-link">LOGIN</a>
+            </li>
           </ul>
-        </div>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </nav>
       </div>
     </header>
+
     <!-- Header End -->
 
     <div class="container p-5">
@@ -205,5 +231,35 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+      hamburger.addEventListener("click", mobileMenu);
+
+      function mobileMenu() {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      }
+
+      const navLink = document.querySelectorAll(".nav-link");
+      navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+      function closeMenu() {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+      }
+    </script>
   </body>
 </html>

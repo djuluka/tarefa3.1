@@ -13,24 +13,6 @@
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-}
-
-/* unvisited link */
-
-/* mouse over link */
-a:hover {
-  color: black;
-}
-
-/* selected link */
-a:active {
-  color: red;
-}
-
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
